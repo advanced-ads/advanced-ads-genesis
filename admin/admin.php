@@ -73,6 +73,7 @@ class Advanced_Ads_Genesis_Admin {
 			'title'       => __( 'Genesis Positions', 'advanced-ads-genesis' ),
 			'description' => __( 'Various positions for the Genesis theme.', 'advanced-ads-genesis' ),
 			'image'       => AAG_BASE_URL . 'admin/assets/img/genesis.png',
+			'order'       => 81,
 		);
 
 		return $types;
