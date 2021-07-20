@@ -9,7 +9,7 @@ class Advanced_Ads_Genesis_Admin {
 	 */
 	protected $plugin;
 
-	const PLUGIN_LINK = 'http://wpadvancedads.com/add-ons/genesis/';
+	const PLUGIN_LINK = 'https://wpadvancedads.com/add-ons/genesis/';
 
 	/**
 	 * Initialize the plugin by loading admin scripts & styles and adding a
@@ -115,7 +115,7 @@ class Advanced_Ads_Genesis_Admin {
 				__( 'Position', 'advanced-ads-genesis' ),
 				$option_content,
 				/* translators: URL to Genesis Hook Reference */
-				sprintf( __( 'You can find an explanation of the hooks in the <a href="%s" target="_blank">Genesis Hook Reference</a>', 'advanced-ads-genesis' ), 'http://my.studiopress.com/docs/hook-reference/' )
+				sprintf( __( 'You can find an explanation of the hooks in the <a href="%s" target="_blank">Genesis Hook Reference</a>', 'advanced-ads-genesis' ), 'https://my.studiopress.com/docs/hook-reference/' )
 			);
 		}
 	}
@@ -127,7 +127,7 @@ class Advanced_Ads_Genesis_Admin {
 	 * @return arr $positions
 	 */
 	public function get_genesis_hooks() {
-		// List of all hooks http://my.studiopress.com/docs/hook-reference/#structural-action-hooks
+		// List of all hooks https://my.studiopress.com/docs/hook-reference/#structural-action-hooks
 		// Only used the ones for public output in frontend here.
 		return array(
 			__( 'Header', 'advanced-ads-genesis' )  => array(
