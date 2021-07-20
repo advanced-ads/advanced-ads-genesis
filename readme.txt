@@ -56,6 +56,11 @@ You can use Advanced Ads along any other ad management plugin and don’t need t
 
 == Changelog ==
 
+= untagged =
+
+- updated placement UI according to the current Advanced Ads layout
+- updated backend links to use HTTPS
+
 = 1.0.6 =
 
 - added compatibility with the new placement order in Advanced Ads
