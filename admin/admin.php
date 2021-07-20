@@ -94,20 +94,29 @@ class Advanced_Ads_Genesis_Admin {
 			// Warning if no Genesis theme installed.
 			if ( ! defined( 'PARENT_THEME_NAME' ) || 'Genesis' !== PARENT_THEME_NAME ) :
 				?><p class="advads-error-message"><?php echo __( 'No Genesis theme detected', 'advanced-ads-genesis' ); ?></p>
-			<?php endif; ?>
-			<label><?php _e( 'position', 'advanced-ads-genesis' ); ?></label>
+			<?php
+			endif;
+			ob_start();
+			?>
 			<select name="advads[placements][<?php echo $placement_slug; ?>][options][genesis_hook]">
-				<option>---</option>
+				<option disabled selected><?php esc_attr_e( 'Select Position', 'advanced-ads-genesis' ); ?></option>
 				<?php foreach ( $genesis_positions as $_group => $_positions ) : ?>
-				<optgroup label="<?php echo $_group; ?>">
-				<?php foreach ( $_positions as $_position ) : ?>
-				<option <?php selected( $_position, $current ); ?>><?php echo $_position; ?></option>
-				<?php endforeach; ?>
-				</optgroup>
+					<optgroup label="<?php echo $_group; ?>">
+						<?php foreach ( $_positions as $_position ) : ?>
+							<option <?php selected( $_position, $current ); ?>><?php echo $_position; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
 				<?php endforeach; ?>
 			</select>
-			<p class="description"><?php printf( __( 'You can find an explanation of the hooks in the <a href="%s" target="_blank">Genesis Hook Reference</a>', 'advanced-ads-genesis' ), 'http://my.studiopress.com/docs/hook-reference/' ); ?></p>
-				<?php
+			<?php
+			$option_content = ob_get_clean();
+			\Advanced_Ads_Admin_Options::render_option(
+				'placement-genesis-hook',
+				__( 'Position', 'advanced-ads-genesis' ),
+				$option_content,
+				/* translators: URL to Genesis Hook Reference */
+				sprintf( __( 'You can find an explanation of the hooks in the <a href="%s" target="_blank">Genesis Hook Reference</a>', 'advanced-ads-genesis' ), 'http://my.studiopress.com/docs/hook-reference/' )
+			);
 		}
 	}
 
