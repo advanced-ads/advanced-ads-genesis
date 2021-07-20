@@ -51,8 +51,13 @@ The positions are mostly self-explanatory. When you check the reference against 
 
 == Installation ==
 
-The Ads for Genesis plugin is based on the free Advanced Ads plugin, a simple and powerful ad management solution for WordPress. Before using this plugin download, install and activate Advanced Ads for free from https://wordpress.org/plugins/advanced-ads/.
+The Ads for Genesis plugin extends the free Advanced Ads plugin, a simple and powerful ad management solution for WordPress. Before using this plugin download, install and activate Advanced Ads for free from https://wordpress.org/plugins/advanced-ads/.
 You can use Advanced Ads along any other ad management plugin and don’t need to switch completely.
+
+== Screenshots ==
+
+1. Genesis placement to place a certain ad or ad group
+2. Choose the position based on hooks which your Genesis theme provides
 
 == Changelog ==
 
