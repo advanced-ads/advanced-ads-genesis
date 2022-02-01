@@ -1,6 +1,6 @@
 === Ads for Genesis ===
 Contributors: webzunft, advancedads
-Tags: genesis, adsense, ads, ad, amazon, adverts, advertisement, banner, rotation, studiopress
+Tags: genesis, adsense, ads, ad, amazon, adverts, advertisement, banners, rotation, studiopress, genesis framework
 Requires at least: 4.2
 Tested up to: 5.9
 Stable tag: 1.0.7
@@ -11,14 +11,14 @@ Ads for Genesis allows you to display any kind of ads without coding in your Gen
 
 == Description ==
 
-Genesis Ads enables you to easily display any kind of ads – including Google AdSense and Amazon – in various positions in your Genesis based theme.
+[Genesis Ads](https://wpadvancedads.com/add-ons/genesis-ads/) enables you to easily display any kind of advertisement – including Google AdSense and Amazon – in various positions in your Genesis based theme.
 
 In order to use Ads for Genesis, you also need
 
 * a theme based on the Genesis Framework built by StudioPress,
 * the free ad management plugin [Advanced Ads](https://wordpress.org/plugins/advanced-ads/).
 
-This combination with Advanced Ads allows you to inject ads like Google AdSense, Amazon, Images ads, etc. managed by Advanced Ads into the predefined positions (called “action hooks“ many Genesis based themes have included in the frontend.
+This combination with Advanced Ads allows you to inject adverts like Google AdSense, Amazon, images banners, etc. managed by Advanced Ads into the predefined positions (called “action hooks“ many Genesis based themes have included in the frontend) and to make use from features like ad rotation.
 Please be aware that your theme author might have left some of them out. Also, the styling of the content added by these hooks depends on your theme. Please contact your theme developer about styling issues.
 
 = Positions for ads =
@@ -52,7 +52,7 @@ The positions are mostly self-explanatory. When you check the reference against 
 == Installation ==
 
 The Ads for Genesis plugin extends the free Advanced Ads plugin, a simple and powerful ad management solution for WordPress. Before using this plugin download, install and activate Advanced Ads for free from https://wordpress.org/plugins/advanced-ads/.
-You can use Advanced Ads along any other ad management plugin and don’t need to switch completely.
+You can use Advanced Ads along any other ad management plugins like Ad Inserter or WP QUADS and don’t need to switch completely.
 
 == Screenshots ==
 
