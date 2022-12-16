@@ -16,13 +16,12 @@ on:
       - submitted
 
 env:
-  backlog: Backlog
   next: Next
   in_progress: In Progress
   todo: Todo
   done: Done
   gh_project_token: ${{ secrets.WEBGILDE_GITHUB_TOKEN }}
-  org: webgilde
+  org: advanced-ads
 
 jobs:
   issue_opened:
@@ -35,9 +34,8 @@ jobs:
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.org }}
-          project_id: 10
+          project_id: 1
           resource_node_id: ${{ github.event.issue.node_id }}
-          status_value: ${{ env.backlog }}
   bug_labeled:
     name: bug_opened
     runs-on: ubuntu-latest
@@ -48,7 +46,7 @@ jobs:
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.org }}
-          project_id: 10
+          project_id: 1
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.next }}
   pr_opened:
@@ -61,7 +59,7 @@ jobs:
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.org }}
-          project_id: 11
+          project_id: 2
           resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: ${{ env.todo }}
   pr_in_progress:
@@ -74,7 +72,7 @@ jobs:
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.org }}
-          project_id: 11
+          project_id: 2
           resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: ${{ env.in_progress }}
   pr_merged:
@@ -87,6 +85,6 @@ jobs:
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.org }}
-          project_id: 11
+          project_id: 2
           resource_node_id: ${{ github.event.pull_request.node_id }}
           status_value: ${{ env.done }}
