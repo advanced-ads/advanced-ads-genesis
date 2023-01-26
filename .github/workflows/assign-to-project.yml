@@ -30,7 +30,7 @@ jobs:
     if: github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'reopened')
     steps:
       - name: Move issue to ${{ env.backlog }}
-        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
+        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.org }}
@@ -42,7 +42,7 @@ jobs:
     if: github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'Bug')
     steps:
       - name: Move bug to ${{ env.next }}
-        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
+        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.org }}
@@ -55,7 +55,7 @@ jobs:
     if: github.event_name == 'pull_request_target' && (github.event.action == 'opened' || github.event.action == 'reopened')
     steps:
       - name: Move PR to Project Board
-        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
+        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.org }}
@@ -68,7 +68,7 @@ jobs:
     if: github.event_name == 'pull_request_review' && github.event.action == 'submitted'
     steps:
       - name: Move PR to In Progress
-        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
+        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.org }}
@@ -81,7 +81,7 @@ jobs:
     if: github.event_name == 'pull_request_target' && github.event.action == 'closed'
     steps:
       - name: Move PR to Done
-        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
+        uses: leonsteinhaeuser/project-beta-automations@v2.0.1
         with:
           gh_token: ${{ env.gh_project_token }}
           organization: ${{ env.org }}
