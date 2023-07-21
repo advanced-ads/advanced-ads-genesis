@@ -40,25 +40,11 @@ if (undefined !== localConfig.wpUrl && '' !== localConfig.wpUrl) {
 }
 
 /**
- * CSS Files
- */
-mix.sass('assets/scss/app.scss', 'assets/css/app.min.css', {
-	sassOptions: {
-		outputStyle: 'compressed',
-	},
-});
-
-/**
- * JavaScript Files
- */
-mix.js('assets/src/app.js', 'assets/js/app.js');
-
-/**
  * WordPress translation
  */
 mix.wpPot({
 	output: '/languages/',
-	file: 'advanced-ads-genesis.pot',
+	file: 'genesis-ads.pot',
 	skipJS: true,
 	domain: 'advanced-ads-genesis',
 });
