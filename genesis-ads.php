@@ -1,7 +1,5 @@
 <?php
 /**
- * Advanced Ads – Genesis
- *
  * Plugin Name:       Advanced Ads – Genesis
  * Plugin URI:        https://wpadvancedads.com/add-ons/genesis/
  * Description:       Place ads on various positions within Genesis themes
@@ -10,35 +8,55 @@
  * Author URI:        https://wpadvancedads.com
  * Text Domain:       advanced-ads-genesis
  * Domain Path:       /languages
+ * Requires at least: 5.5
+ * Requires PHP:      7.0
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ * @package    AdvancedAds\Genesis
+ * @author  Advanced Ads <info@wpadvancedads.com>
+ * @since      1.0.0
  */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+use AdvancedAds\Genesis\Plugin;
+
+defined( 'ABSPATH' ) || exit;
+
+require_once 'vendor/autoload.php';
+
+// Early bail!!
+if ( class_exists( 'Advanced_Ads_Genesis_Plugin' ) ) {
+	return;
 }
 
-// Only load if not already existing (maybe within another plugin I created).
-if ( ! class_exists( 'Advanced_Ads_Genesis_Plugin' ) ) {
+// Load basic path and url to the plugin.
+define( 'AAG_BASE_PATH', plugin_dir_path( __FILE__ ) );
+define( 'AAG_BASE_URL', plugin_dir_url( __FILE__ ) );
+define( 'AAG_BASE_DIR', dirname( plugin_basename( __FILE__ ) ) ); // Directory of the plugin without any paths.
 
-	// Load basic path and url to the plugin.
-	define( 'AAG_BASE_PATH', plugin_dir_path( __FILE__ ) );
-	define( 'AAG_BASE_URL', plugin_dir_url( __FILE__ ) );
-	define( 'AAG_BASE_DIR', dirname( plugin_basename( __FILE__ ) ) ); // Directory of the plugin without any paths.
+// Plugin slug and textdomain.
+define( 'AAG_SLUG', 'advanced-ads-genesis' );
 
-	// Plugin slug and textdomain.
-	define( 'AAG_SLUG', 'advanced-ads-genesis' );
+define( 'AAG_VERSION', '1.0.8' );
+define( 'AAG_PLUGIN_URL', 'https://wpadvancedads.com' );
+define( 'AAG_PLUGIN_NAME', 'Genesis Ads' );
 
-	define( 'AAG_VERSION', '1.0.8' );
-	define( 'AAG_PLUGIN_URL', 'https://wpadvancedads.com' );
-	define( 'AAG_PLUGIN_NAME', 'Genesis Ads' );
+/**
+ * Plugin bootstrap.
+ *
+ * @return void
+ */
+function advanced_ads_genesis_init() {
+	// Stop, if main plugin doesn’t exist.
+	if ( ! class_exists( 'Advanced_Ads', false ) ) {
+		Plugin::get()
+			->load_plugin_textdomain();
 
-	include_once plugin_dir_path( __FILE__ ) . 'classes/plugin.php';
-
-	if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
-		include_once plugin_dir_path( __FILE__ ) . 'admin/admin.php';
-		new Advanced_Ads_Genesis_Admin();
-	} else {
-		include_once plugin_dir_path( __FILE__ ) . 'public/public.php';
-		new Advanced_Ads_Genesis();
+		add_action( 'admin_notices', [ Plugin::get(), 'missing_plugin_notice' ] );
+		return;
 	}
+
+	// Kick it!!
+	Plugin::get()->hooks();
 }
+add_action( 'plugins_loaded', 'advanced_ads_genesis_init' );
