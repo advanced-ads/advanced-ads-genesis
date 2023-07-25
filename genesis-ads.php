@@ -13,9 +13,9 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  *
- * @package    AdvancedAds\Genesis
+ * @package AdvancedAds\Genesis
  * @author  Advanced Ads <info@wpadvancedads.com>
- * @since      1.0.0
+ * @since   1.0.0
  */
 
 use AdvancedAds\Genesis\Plugin;
@@ -36,7 +36,6 @@ define( 'AAG_BASE_DIR', dirname( plugin_basename( __FILE__ ) ) ); // Directory o
 
 // Plugin slug and textdomain.
 define( 'AAG_SLUG', 'advanced-ads-genesis' );
-
 define( 'AAG_VERSION', '1.0.8' );
 define( 'AAG_PLUGIN_URL', 'https://wpadvancedads.com' );
 define( 'AAG_PLUGIN_NAME', 'Genesis Ads' );
