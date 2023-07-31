@@ -67,7 +67,7 @@ class Admin implements WordPress_Integration {
 		}
 
 		$genesis_positions = $this->get_genesis_hooks();
-		$current           = isset( $placement['options']['genesis_hook'] ) ? $placement['options']['genesis_hook'] : '';
+		$current           = $placement['options']['genesis_hook'] ?? '';
 
 		// Warning if no Genesis theme installed.
 		if ( ! defined( 'PARENT_THEME_NAME' ) || 'Genesis' !== PARENT_THEME_NAME ) :
