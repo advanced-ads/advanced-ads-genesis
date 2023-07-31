@@ -19,7 +19,7 @@
 		"watch": "mix watch",
 		"watch-poll": "mix watch -- --watch-options-poll=1000",
 		"hot": "mix watch --hot",
-		"dist": "mix --production",
+		"build": "mix --production",
 		"lint": "lint-staged",
 		"lint:css": "stylelint \"**/*.css\" --cache",
 		"lint:js": "eslint . --cache",
@@ -43,7 +43,6 @@
 		"sass": "^1.64.0",
 		"sass-loader": "^13.3.2",
 		"shelljs": "^0.8.5",
-		"stylelint": "^14.16.1",
 		"webpack": "^5.88.2"
 	},
 	"browserslist": [
@@ -72,5 +71,10 @@
 	"glotpress": {
 		"project": "advanced-ads-genesis",
 		"destination": "./languages/"
+	},
+	"wpPot": {
+		"output": "/languages/",
+		"file": "genesis-ads.pot",
+		"domain": "advanced-ads-genesis"
 	}
 }
