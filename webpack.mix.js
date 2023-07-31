@@ -4,6 +4,7 @@
 const mix = require('laravel-mix');
 const { join } = require('path');
 require('./tools/laravel-mix/wp-pot');
+const packageData = require('./package.json');
 
 // Local config.
 let localConfig = {};
@@ -43,8 +44,8 @@ if (undefined !== localConfig.wpUrl && '' !== localConfig.wpUrl) {
  * WordPress translation
  */
 mix.wpPot({
-	output: '/languages/',
-	file: 'genesis-ads.pot',
+	output: packageData.wpPot.output,
+	file: packageData.wpPot.file,
 	skipJS: true,
-	domain: 'advanced-ads-genesis',
+	domain: packageData.wpPot.domain,
 });
