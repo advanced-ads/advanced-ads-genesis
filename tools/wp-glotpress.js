@@ -100,10 +100,11 @@ class GlotPressDownloader {
 		}
 
 		// Set data.
-		const { project, potPrefix, destination } = packageDetails.glotpress;
+		const { project, destination } = packageDetails.glotpress;
+		const { domain } = packageDetails.wpPot;
 
 		this.project = project;
-		this.potPrefix = potPrefix ?? project;
+		this.potPrefix = domain ?? project;
 		this.destination = destination;
 	}
 
