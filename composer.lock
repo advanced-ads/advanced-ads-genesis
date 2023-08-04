@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/advanced-ads/framework.git",
-                "reference": "725533cac13794c293bb0f038563d4bf4156e466"
+                "reference": "c56b239eaef592db27952e54b224ff831b01243d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/advanced-ads/framework/zipball/725533cac13794c293bb0f038563d4bf4156e466",
-                "reference": "725533cac13794c293bb0f038563d4bf4156e466",
+                "url": "https://api.github.com/repos/advanced-ads/framework/zipball/c56b239eaef592db27952e54b224ff831b01243d",
+                "reference": "c56b239eaef592db27952e54b224ff831b01243d",
                 "shasum": ""
             },
             "require": {
@@ -31,6 +31,9 @@
             "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
+                "files": [
+                    "src/assets.php"
+                ],
                 "classmap": [
                     "src/"
                 ]
@@ -52,7 +55,7 @@
                 "issues": "https://github.com/advanced-ads/framework/issues",
                 "source": "https://github.com/advanced-ads/framework/tree/main"
             },
-            "time": "2023-07-21T00:59:58+00:00"
+            "time": "2023-08-04T20:45:17+00:00"
         }
     ],
     "packages-dev": [
@@ -419,7 +422,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "advanced-ads/framework": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
