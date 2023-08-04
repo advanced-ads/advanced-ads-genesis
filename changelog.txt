@@ -1,1 +1,5 @@
 == Changelog ==
+
+= 1.0.9 (August 4, 2023) =
+
+- Improvement: refactor the plugin on WordPress standards
