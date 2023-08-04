@@ -3,8 +3,8 @@
 
 const mix = require('laravel-mix');
 const { join } = require('path');
-require('./tools/laravel-mix/wp-pot');
 const packageData = require('./package.json');
+require('./tools/laravel-mix/wp-pot');
 
 // Local config.
 let localConfig = {};
