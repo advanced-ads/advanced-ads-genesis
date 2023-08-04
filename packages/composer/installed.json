@@ -1,0 +1,57 @@
+{
+    "packages": [
+        {
+            "name": "advanced-ads/framework",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/advanced-ads/framework.git",
+                "reference": "725533cac13794c293bb0f038563d4bf4156e466"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/advanced-ads/framework/zipball/725533cac13794c293bb0f038563d4bf4156e466",
+                "reference": "725533cac13794c293bb0f038563d4bf4156e466",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+                "phpcompatibility/phpcompatibility-wp": "*",
+                "wp-coding-standards/wpcs": "^2.3"
+            },
+            "time": "2023-07-21T00:59:58+00:00",
+            "default-branch": true,
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Advanced Ads",
+                    "email": "info@wpadvancedads.com",
+                    "homepage": "https://wpadvancedads.com"
+                }
+            ],
+            "description": "Place ads on various positions within Genesis themes",
+            "homepage": "https://wpadvancedads.com/",
+            "support": {
+                "issues": "https://github.com/advanced-ads/framework/issues",
+                "source": "https://github.com/advanced-ads/framework/tree/main"
+            },
+            "install-path": "../advanced-ads/framework"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}
