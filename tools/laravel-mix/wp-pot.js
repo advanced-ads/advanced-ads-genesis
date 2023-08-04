@@ -6,9 +6,7 @@ class WordPressPot {
 	}
 
 	dependencies() {
-		this.requiresReload = `
-      Dependencies have been installed. Please run again.
-    `;
+		this.requiresReload = `Dependencies have been installed. Please run again.`;
 
 		return ['shelljs'];
 	}
@@ -28,8 +26,12 @@ class WordPressPot {
 		} = this.config;
 
 		exclude.push('.github');
-		exclude.push('vendor');
+		exclude.push('.husky');
+		exclude.push('.wordpress-org');
+		exclude.push('node_modules');
+		exclude.push('packages');
 		exclude.push('tools');
+		exclude.push('vendor');
 
 		const rootPath = process.cwd();
 

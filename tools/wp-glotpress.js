@@ -8,7 +8,6 @@ const { resolve } = require('path');
 const async = require('async');
 
 const packageDetails = require('../package.json');
-
 class GlotPressDownloader {
 	baseURL = 'https://translate.wpadvancedads.com/api/projects';
 
