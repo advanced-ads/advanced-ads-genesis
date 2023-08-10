@@ -10,14 +10,14 @@
 namespace AdvancedAds\Genesis;
 
 use Advanced_Ads_Admin_Options;
-use AdvancedAds\Framework\Interfaces\WordPress_Integration;
+use AdvancedAds\Framework\Interfaces\Integration_Interface;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Admin Class.
  */
-class Admin implements WordPress_Integration {
+class Admin implements Integration_Interface {
 
 	/**
 	 * Hook into WordPress.
