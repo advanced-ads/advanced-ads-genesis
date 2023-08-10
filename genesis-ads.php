@@ -24,21 +24,25 @@ defined( 'ABSPATH' ) || exit;
 
 require_once 'vendor/autoload.php';
 
-// Early bail!!
-if ( class_exists( 'Advanced_Ads_Genesis_Plugin' ) ) {
-	return;
-}
-
 // Load basic path and url to the plugin.
 define( 'AAG_BASE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'AAG_BASE_URL', plugin_dir_url( __FILE__ ) );
-define( 'AAG_BASE_DIR', dirname( plugin_basename( __FILE__ ) ) ); // Directory of the plugin without any paths.
+define( 'AAG_BASE_DIR', dirname( plugin_basename( __FILE__ ) ) );
 
-// Plugin slug and textdomain.
-define( 'AAG_SLUG', 'advanced-ads-genesis' );
-define( 'AAG_VERSION', '1.0.8' );
-define( 'AAG_PLUGIN_URL', 'https://wpadvancedads.com' );
-define( 'AAG_PLUGIN_NAME', 'Genesis Ads' );
+/**
+ * Register autoloader
+ */
+function advanced_ads_genesis_locate_autoloader() {
+	$packages = AAG_BASE_PATH . 'packages/autoload.php';
+	$vendors  = AAG_BASE_PATH . 'vendor/autoload.php';
+
+	if ( is_readable( $packages ) ) {
+		return $packages;
+	}
+
+	return $vendors;
+}
+require_once advanced_ads_genesis_locate_autoloader();
 
 /**
  * Plugin bootstrap.
