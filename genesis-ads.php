@@ -22,8 +22,6 @@ use AdvancedAds\Genesis\Plugin;
 
 defined( 'ABSPATH' ) || exit;
 
-require_once 'vendor/autoload.php';
-
 // Load basic path and url to the plugin.
 define( 'AAG_BASE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'AAG_BASE_URL', plugin_dir_url( __FILE__ ) );
