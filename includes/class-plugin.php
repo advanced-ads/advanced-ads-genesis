@@ -75,7 +75,7 @@ class Plugin implements WordPress_Integration {
 
 		unload_textdomain( 'advanced-ads-genesis' );
 		load_textdomain( 'advanced-ads-genesis', WP_LANG_DIR . '/advanced-ads-genesis/advanced-ads-genesis-' . $locale . '.mo' );
-		load_plugin_textdomain( 'advanced-ads-genesis', false, AAG_BASE_DIR . '/i18n/languages' );
+		load_plugin_textdomain( 'advanced-ads-genesis', false, AAG_BASE_DIR . '/languages' );
 	}
 
 	/**

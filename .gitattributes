@@ -30,4 +30,5 @@ assets/frontend/src     export-ignore
 bin/                    export-ignore
 .changelog/             export-ignore
 tests/                  export-ignore
+tools/                  export-ignore
 adv-ads-scaffolding export-ignore
