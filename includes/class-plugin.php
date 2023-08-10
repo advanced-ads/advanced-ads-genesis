@@ -9,7 +9,7 @@
 
 namespace AdvancedAds\Genesis;
 
-use AdvancedAds\Framework\Interfaces\WordPress_Integration;
+use AdvancedAds\Framework\Interfaces\Integration_Interface;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 1.0.0
  */
-class Plugin implements WordPress_Integration {
+class Plugin implements Integration_Interface {
 
 	/**
 	 * Main instance

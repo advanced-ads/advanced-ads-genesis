@@ -9,14 +9,14 @@
 
 namespace AdvancedAds\Genesis;
 
-use AdvancedAds\Framework\Interfaces\WordPress_Integration;
+use AdvancedAds\Framework\Interfaces\Integration_Interface;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Frontend Class.
  */
-class Frontend implements WordPress_Integration {
+class Frontend implements Integration_Interface {
 
 	/**
 	 * Hold genesis hooks from placements.
