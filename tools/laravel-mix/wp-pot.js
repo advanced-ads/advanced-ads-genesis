@@ -23,6 +23,10 @@ class WordPressPot {
 			domain,
 			skipJS = false,
 			exclude = [],
+			headers = {
+				'Last-Translator': 'Thomas Maier <post@webzunft.de>',
+				'Language-Team': 'webgilde <support@wpadvancedads.com>',
+			},
 		} = this.config;
 
 		exclude.push('.github');
@@ -34,12 +38,16 @@ class WordPressPot {
 		exclude.push('vendor');
 
 		const rootPath = process.cwd();
+		const command = [
+			'wp i18n make-pot',
+			rootPath,
+			rootPath + output + file,
+			`--domain=${domain}`,
+			`--exclude=${exclude.join(',')}`,
+			`--headers='${JSON.stringify(headers)}'`,
+		];
 
-		sh.exec(
-			`wp i18n make-pot ${rootPath} ${rootPath}${output}${file} --domain=${domain} --exclude=${exclude.join(
-				','
-			)}`
-		);
+		sh.exec(command.join(' '));
 		if (false !== skipJS) {
 			sh.exec(`wp i18n make-json ${rootPath}${output}`, { silent: true });
 		}
