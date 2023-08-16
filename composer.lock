@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/advanced-ads/framework.git",
-                "reference": "fab521d428373c9bbb5880a14e9f5ef6aadcb0ad"
+                "reference": "d89b70a603055e25aaf1749820857a9b0a60cdd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/advanced-ads/framework/zipball/fab521d428373c9bbb5880a14e9f5ef6aadcb0ad",
-                "reference": "fab521d428373c9bbb5880a14e9f5ef6aadcb0ad",
+                "url": "https://api.github.com/repos/advanced-ads/framework/zipball/d89b70a603055e25aaf1749820857a9b0a60cdd9",
+                "reference": "d89b70a603055e25aaf1749820857a9b0a60cdd9",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
                 "issues": "https://github.com/advanced-ads/framework/issues",
                 "source": "https://github.com/advanced-ads/framework/tree/main"
             },
-            "time": "2023-08-10T21:23:47+00:00"
+            "time": "2023-08-16T08:09:51+00:00"
         }
     ],
     "packages-dev": [
