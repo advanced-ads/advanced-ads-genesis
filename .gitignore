@@ -29,6 +29,7 @@ npm-debug.log
 node_modules/
 
 # Composer
+packages/**/tests/
 vendor/
 bin/composer/**/vendor/
 
@@ -36,3 +37,7 @@ bin/composer/**/vendor/
 !.gitkeep
 webpack.mix.local.js
 mix-manifest.json
+
+# WP Browser Files
+tests/_output
+tests/.env

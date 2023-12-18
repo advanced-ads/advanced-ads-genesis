@@ -1,6 +1,6 @@
 ## Description
 
-Please include a summary of the change and which issue is fixed. Provide a clear explanation of the motivation and context behind the change, including how it aligns with project goals.
+Explain your approach to a solution and decisions that lead to it. E.g., which alternatives you evaluated and why you chose yours.
 
 ## Issue ticket number and link
 Related to: #[Issue Number]
@@ -14,27 +14,28 @@ Describe the tests that were conducted to verify the changes. Include instructio
 - [ ] Automated Test B (Purpose of Test B)
 - [ ] Manual Test A (Purpose of Test A)
 - [ ] Manual Test B (Purpose of Test B)
+- [ ] Support / User A confirmed the fix
 
 ## Checklist:
 
 ### Developer -> Code Review:
 - [ ] PR title is clear and descriptive
-- [ ] Code follows the style guidelines of this project
-- [ ] I have performed a self-review of my own code
-- [ ] Code is easily understandable and well-documented
-- [ ] Request a code review from a peer or senior developer
+- [ ] Code is understandable, readable and well-documented
 
 ### Developer -> Testing:
-- [ ] My changes generate no new warnings
+- [ ] My changes generate no new warnings in debug.log and Query Monitor
 - [ ] New and existing unit tests pass locally with my changes
 - [ ] I have added tests that prove my fix is effective or that my feature works
 
 ### Developer -> Documentation:
-- [ ] I have made corresponding changelogs
+- [ ] I have made corresponding changelogs that are grammatically correct according to ...
 - [ ] (Optional) Update relevant documentation, such as API endpoints, configuration changes, or user guides
 
 ### Developer -> Dependencies:
-- [ ] Ensure your changes do not introduce new external dependencies without proper justification
+- [ ] (Optional) If you introduced any external dependencies, explain your reasoning here.
+
+### Reviewers -> Review:
+... describe what they tested – and what they didn’t
 
 ### Assignee -> Review:
 - [ ] Ensure the PR aligns with the original user story or feature requirement
@@ -43,7 +44,6 @@ Describe the tests that were conducted to verify the changes. Include instructio
 ### Assignee -> Testing:
 - [ ] Conduct user acceptance testing to validate that the changes meet the user's needs
 - [ ] Verify that the feature works as expected and doesn't introduce regressions
-- [ ] No issues have been found on the staging environment
 - [ ] PR reviewer has approved the release
 - [ ] Final changelog has been determined/approved
 
