@@ -34,28 +34,17 @@ if ( defined( 'AAG_FILE' ) ) {
 	return;
 }
 
-define( 'AAG_FILE', AAG_FILE );
+define( 'AAG_FILE', __FILE__ );
 define( 'AAG_VERSION', '2.6.0' );
+
+// Load the autoloader.
+require_once __DIR__ . '/includes/class-autoloader.php';
+\AdvancedAds\Genesis\Autoloader::get()->initialize();
 
 // Load basic path and url to the plugin.
 define( 'AAG_BASE_PATH', plugin_dir_path( AAG_FILE ) );
 define( 'AAG_BASE_URL', plugin_dir_url( AAG_FILE ) );
 define( 'AAG_BASE_DIR', dirname( plugin_basename( AAG_FILE ) ) );
-
-/**
- * Register autoloader
- */
-function advanced_ads_genesis_locate_autoloader() {
-	$packages = AAG_BASE_PATH . 'packages/autoload.php';
-	$vendors  = AAG_BASE_PATH . 'vendor/autoload.php';
-
-	if ( is_readable( $packages ) ) {
-		return $packages;
-	}
-
-	return $vendors;
-}
-require_once advanced_ads_genesis_locate_autoloader();
 
 /**
  * Plugin bootstrap.
