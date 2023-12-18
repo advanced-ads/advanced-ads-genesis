@@ -1,31 +1,46 @@
 <?php
 /**
+ * Advanced Ads – Genesis
+ *
+ * @package   AdvancedAds
+ * @author    Advanced Ads GmbH <support@wpadvancedads.com>
+ * @license   GPL-2.0+
+ * @link      https://wpadvancedads.com
+ * @copyright since 2013 Advanced Ads GmbH
+ *
+ * @wordpress-plugin
  * Plugin Name:       Advanced Ads – Genesis
  * Plugin URI:        https://wpadvancedads.com/add-ons/genesis/
  * Description:       Place ads on various positions within Genesis themes
  * Version:           1.1.0
- * Author:            Advanced Ads
+ * Author:            Advanced Ads GmbH
  * Author URI:        https://wpadvancedads.com
  * Text Domain:       advanced-ads-genesis
  * Domain Path:       /languages
- * Requires at least: 5.5
- * Requires PHP:      7.2
  * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- *
- * @package AdvancedAds\Genesis
- * @author  Advanced Ads <info@wpadvancedads.com>
- * @since   1.0.0
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.txt
  */
 
 use AdvancedAds\Genesis\Plugin;
 
-defined( 'ABSPATH' ) || exit;
+// Early bail!!
+if ( ! function_exists( 'add_filter' ) ) {
+	header( 'Status: 403 Forbidden' );
+	header( 'HTTP/1.1 403 Forbidden' );
+	exit();
+}
+
+if ( defined( 'AAG_FILE' ) ) {
+	return;
+}
+
+define( 'AAG_FILE', AAG_FILE );
+define( 'AAG_VERSION', '2.6.0' );
 
 // Load basic path and url to the plugin.
-define( 'AAG_BASE_PATH', plugin_dir_path( __FILE__ ) );
-define( 'AAG_BASE_URL', plugin_dir_url( __FILE__ ) );
-define( 'AAG_BASE_DIR', dirname( plugin_basename( __FILE__ ) ) );
+define( 'AAG_BASE_PATH', plugin_dir_path( AAG_FILE ) );
+define( 'AAG_BASE_URL', plugin_dir_url( AAG_FILE ) );
+define( 'AAG_BASE_DIR', dirname( plugin_basename( AAG_FILE ) ) );
 
 /**
  * Register autoloader
