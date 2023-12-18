@@ -38,6 +38,7 @@ class ComposerStaticInitbf6641795e49cef82fe755facdc9c332
         'AdvancedAds\\Framework\\Utilities\\Params' => __DIR__ . '/..' . '/advanced-ads/framework/src/utilities/class-params.php',
         'AdvancedAds\\Framework\\Utilities\\Str' => __DIR__ . '/..' . '/advanced-ads/framework/src/utilities/class-string.php',
         'AdvancedAds\\Genesis\\Admin' => __DIR__ . '/../..' . '/includes/admin/class-admin.php',
+        'AdvancedAds\\Genesis\\Autoloader' => __DIR__ . '/../..' . '/includes/class-autoloader.php',
         'AdvancedAds\\Genesis\\Frontend' => __DIR__ . '/../..' . '/includes/class-frontend.php',
         'AdvancedAds\\Genesis\\Plugin' => __DIR__ . '/../..' . '/includes/class-plugin.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',

@@ -21,8 +21,6 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.txt
  */
 
-use AdvancedAds\Genesis\Plugin;
-
 // Early bail!!
 if ( ! function_exists( 'add_filter' ) ) {
 	header( 'Status: 403 Forbidden' );
@@ -35,33 +33,22 @@ if ( defined( 'AAG_FILE' ) ) {
 }
 
 define( 'AAG_FILE', __FILE__ );
-define( 'AAG_VERSION', '2.6.0' );
+define( 'AAG_VERSION', '1.1.0' );
 
 // Load the autoloader.
 require_once __DIR__ . '/includes/class-autoloader.php';
 \AdvancedAds\Genesis\Autoloader::get()->initialize();
 
-// Load basic path and url to the plugin.
-define( 'AAG_BASE_PATH', plugin_dir_path( AAG_FILE ) );
-define( 'AAG_BASE_URL', plugin_dir_url( AAG_FILE ) );
-define( 'AAG_BASE_DIR', dirname( plugin_basename( AAG_FILE ) ) );
-
 /**
- * Plugin bootstrap.
+ * Returns the main instance of the plugin.
  *
- * @return void
+ * @since 1.1.0
+ *
+ * @return \AdvancedAds\Genesis\Plugin
  */
-function advanced_ads_genesis_init() {
-	// Stop, if main plugin doesn’t exist.
-	if ( ! class_exists( 'Advanced_Ads', false ) ) {
-		Plugin::get()
-			->load_plugin_textdomain();
-
-		add_action( 'admin_notices', [ Plugin::get(), 'missing_plugin_notice' ] );
-		return;
-	}
-
-	// Kick it!!
-	Plugin::get()->hooks();
+function wp_advads_genesis() {
+	return \AdvancedAds\Genesis\Plugin::get();
 }
-add_action( 'plugins_loaded', 'advanced_ads_genesis_init' );
+
+// Start it.
+add_action( 'advanced-ads-loaded', 'wp_advads_genesis' );

@@ -33,6 +33,7 @@ return array(
     'AdvancedAds\\Framework\\Utilities\\Params' => $vendorDir . '/advanced-ads/framework/src/utilities/class-params.php',
     'AdvancedAds\\Framework\\Utilities\\Str' => $vendorDir . '/advanced-ads/framework/src/utilities/class-string.php',
     'AdvancedAds\\Genesis\\Admin' => $baseDir . '/includes/admin/class-admin.php',
+    'AdvancedAds\\Genesis\\Autoloader' => $baseDir . '/includes/class-autoloader.php',
     'AdvancedAds\\Genesis\\Frontend' => $baseDir . '/includes/class-frontend.php',
     'AdvancedAds\\Genesis\\Plugin' => $baseDir . '/includes/class-plugin.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
