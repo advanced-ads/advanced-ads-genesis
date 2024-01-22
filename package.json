@@ -31,7 +31,7 @@
 	},
 	"devDependencies": {
 		"@wordpress/eslint-plugin": "^17.5.0",
-		"@wordpress/stylelint-config": "^21.31.0",
+		"@wordpress/stylelint-config": "^21.32.0",
 		"async": "^3.2.5",
 		"browser-sync": "^2.29.3",
 		"browser-sync-webpack-plugin": "^2.3.0",
