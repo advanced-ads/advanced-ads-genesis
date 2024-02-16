@@ -55,19 +55,19 @@ class Admin implements Integration_Interface {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $placement_slug Slug of the placement.
-	 * @param array  $placement      Current placement.
+	 * @param string    $placement_slug Placement id.
+	 * @param Placement $placement      Placement instance.
 	 *
 	 * @return void
 	 */
 	public function placement_options( $placement_slug = '', $placement = [] ) {
 		// Early bail!!
-		if ( 'genesis' !== $placement['type'] ) {
+		if ( ! $placement->is_type( 'genesis' ) ) {
 			return;
 		}
 
 		$genesis_positions = $this->get_genesis_hooks();
-		$current           = $placement['options']['genesis_hook'] ?? '';
+		$current           = $placement->get_prop( 'genesis_hook' ) ?? '';
 
 		// Warning if no Genesis theme installed.
 		if ( ! defined( 'PARENT_THEME_NAME' ) || 'Genesis' !== PARENT_THEME_NAME ) :
@@ -80,7 +80,7 @@ class Admin implements Integration_Interface {
 
 		ob_start();
 		?>
-		<select name="advads[placements][<?php echo esc_attr( $placement_slug ); ?>][options][genesis_hook]">
+		<select name="advads[placements][options][genesis_hook]">
 			<option disabled selected><?php esc_attr_e( 'Select Position', 'advanced-ads-genesis' ); ?></option>
 			<?php foreach ( $genesis_positions as $_group => $_positions ) : ?>
 				<optgroup label="<?php echo esc_attr( $_group ); ?>">
