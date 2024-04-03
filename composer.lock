@@ -4,59 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf6641795e49cef82fe755facdc9c332",
-    "packages": [
-        {
-            "name": "advanced-ads/framework",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/advanced-ads/framework.git",
-                "reference": "95e385daf3e3f11125711f43c5f7c437e00b075d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/advanced-ads/framework/zipball/95e385daf3e3f11125711f43c5f7c437e00b075d",
-                "reference": "95e385daf3e3f11125711f43c5f7c437e00b075d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2"
-            },
-            "require-dev": {
-                "phpcompatibility/phpcompatibility-wp": "*",
-                "wp-coding-standards/wpcs": "^3.0.0"
-            },
-            "default-branch": true,
-            "type": "wordpress-plugin",
-            "autoload": {
-                "files": [
-                    "src/assets.php"
-                ],
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Advanced Ads",
-                    "email": "info@wpadvancedads.com",
-                    "homepage": "https://wpadvancedads.com"
-                }
-            ],
-            "description": "Place ads on various positions within Genesis themes",
-            "homepage": "https://wpadvancedads.com/",
-            "support": {
-                "issues": "https://github.com/advanced-ads/framework/issues",
-                "source": "https://github.com/advanced-ads/framework/tree/main"
-            },
-            "time": "2023-12-18T07:33:42+00:00"
-        }
-    ],
+    "content-hash": "06a503665edb0f34061882affc4437de",
+    "packages": [],
     "packages-dev": [
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -625,9 +574,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "advanced-ads/framework": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

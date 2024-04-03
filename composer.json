@@ -15,8 +15,7 @@
 		}
 	],
 	"require": {
-		"php": ">=7.2",
-		"advanced-ads/framework": "dev-main"
+		"php": ">=7.2"
 	},
 	"require-dev": {
 		"phpcompatibility/phpcompatibility-wp": "*",
