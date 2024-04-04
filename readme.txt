@@ -2,7 +2,7 @@
 Contributors: advancedads, webzunft
 Tags: genesis, adsense, ads, ad, amazon, adverts, advertisement, banners, rotation, studiopress, genesis framework
 Requires at least: 4.2
-Tested up to: 6.2
+Tested up to: 6.5
 Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
