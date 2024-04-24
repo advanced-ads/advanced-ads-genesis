@@ -45,6 +45,7 @@ class Admin implements Integration_Interface {
 			'description' => esc_html__( 'Various positions for the Genesis theme.', 'advanced-ads-genesis' ),
 			'image'       => AA_GENESIS_BASE_URL . 'assets/img/genesis.png',
 			'order'       => 81,
+			'is_premium'  => false,
 		];
 
 		return $types;
