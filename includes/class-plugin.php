@@ -113,6 +113,6 @@ class Plugin extends Loader {
 		if ( false === load_textdomain( 'advanced-ads-genesis', WP_LANG_DIR . '/plugins/advanced-ads-genesis-' . $locale . '.mo' ) ) {
 			load_textdomain( 'advanced-ads-genesis', WP_LANG_DIR . '/advanced-ads-genesis/advanced-ads-genesis-' . $locale . '.mo' );
 		}
-		load_plugin_textdomain( 'advanced-ads-genesis', false, dirname( AA_TRACKING_BASENAME ) . '/languages' );
+		load_plugin_textdomain( 'advanced-ads-genesis', false, dirname( AA_GENESIS_BASENAME ) . '/languages' );
 	}
 }
