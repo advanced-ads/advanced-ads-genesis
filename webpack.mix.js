@@ -43,9 +43,11 @@ if (undefined !== localConfig.wpUrl && '' !== localConfig.wpUrl) {
 /**
  * WordPress translation
  */
-mix.wpPot({
-	output: packageData.wpPot.output,
-	file: packageData.wpPot.file,
-	skipJS: true,
-	domain: packageData.wpPot.domain,
-});
+if (process.argv.includes('wpPot')) {
+	mix.wpPot({
+		output: packageData.wpPot.output,
+		file: packageData.wpPot.file,
+		skipJS: true,
+		domain: packageData.wpPot.domain,
+	});
+}

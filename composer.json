@@ -41,10 +41,6 @@
 			"composer global require wp-cli/wp-cli",
 			"composer global require wp-cli/i18n-command"
 		],
-		"build": [
-			"rm -r packages || true",
-			"COMPOSER_VENDOR_DIR=packages composer install -o -a -n --no-dev --no-scripts",
-			"composer dump"
-		]
+		"build": "sh ./tools/build.sh"
 	}
 }
