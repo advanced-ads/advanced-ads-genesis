@@ -30,7 +30,7 @@
 		"translations": "node ./tools/wp-glotpress.js"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^19.1.0",
+		"@wordpress/eslint-plugin": "^20.0.0",
 		"@wordpress/stylelint-config": "^22.2.0",
 		"async": "^3.2.5",
 		"browser-sync": "^2.29.3",
