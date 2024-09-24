@@ -41,7 +41,7 @@
 		"laravel-mix": "^6.0.49",
 		"lint-staged": "^15.2.10",
 		"mix-tailwindcss": "^1.3.0",
-		"postcss": "^8.4.45",
+		"postcss": "^8.4.47",
 		"prettier": "^3.3.3",
 		"resolve-url-loader": "^5.0.0",
 		"sass": "^1.78.0",
