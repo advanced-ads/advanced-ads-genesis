@@ -30,7 +30,7 @@ class Frontend implements Integration_Interface {
 	 *
 	 * @return void
 	 */
-	public function hooks() {
+	public function hooks(): void {
 		$hooks = array_keys( $this->get_genesis_hooks() );
 		foreach ( $hooks as $hook ) {
 			add_action( $hook, [ $this, 'execute_hook' ] );
