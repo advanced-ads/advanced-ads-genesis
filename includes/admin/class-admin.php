@@ -9,7 +9,7 @@
 
 namespace AdvancedAds\Genesis;
 
-use Advanced_Ads_Admin_Options;
+use AdvancedAds\Utilities\WordPress;
 use AdvancedAds\Framework\Interfaces\Integration_Interface;
 
 defined( 'ABSPATH' ) || exit;
@@ -96,7 +96,7 @@ class Admin implements Integration_Interface {
 		<?php
 		$option_content = ob_get_clean();
 
-		Advanced_Ads_Admin_Options::render_option(
+		WordPress::render_option(
 			'placement-genesis-hook',
 			__( 'Position', 'advanced-ads-genesis' ),
 			$option_content,
