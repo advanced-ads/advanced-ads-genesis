@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-18T23:29:19+00:00\n"
+"POT-Creation-Date: 2024-11-27T07:03:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: advanced-ads-genesis\n"
 
 #. Plugin Name of the plugin
@@ -39,56 +39,56 @@ msgstr ""
 msgid "https://wpadvancedads.com"
 msgstr ""
 
-#: includes/admin/class-admin.php:44
+#: includes/admin/class-admin.php:46
 msgid "Genesis Positions"
 msgstr ""
 
-#: includes/admin/class-admin.php:45
+#: includes/admin/class-admin.php:47
 msgid "Various positions for the Genesis theme."
 msgstr ""
 
-#: includes/admin/class-admin.php:77
+#: includes/admin/class-admin.php:79
 msgid "No Genesis theme detected"
 msgstr ""
 
-#: includes/admin/class-admin.php:85
+#: includes/admin/class-admin.php:87
 msgid "Select Position"
 msgstr ""
 
-#: includes/admin/class-admin.php:99
+#: includes/admin/class-admin.php:101
 msgid "Position"
 msgstr ""
 
 #. translators: URL to Genesis Hook Reference
-#: includes/admin/class-admin.php:102
+#: includes/admin/class-admin.php:104
 msgid "You can find an explanation of the hooks in the <a href=\"%s\" target=\"_blank\">Genesis Hook Reference</a>"
 msgstr ""
 
-#: includes/admin/class-admin.php:116
+#: includes/admin/class-admin.php:118
 msgid "Header"
 msgstr ""
 
-#: includes/admin/class-admin.php:123
+#: includes/admin/class-admin.php:125
 msgid "Wrapper"
 msgstr ""
 
-#: includes/admin/class-admin.php:129
+#: includes/admin/class-admin.php:131
 msgid "Sidebar"
 msgstr ""
 
-#: includes/admin/class-admin.php:137
+#: includes/admin/class-admin.php:139
 msgid "Loop"
 msgstr ""
 
-#: includes/admin/class-admin.php:144
+#: includes/admin/class-admin.php:146
 msgid "Content"
 msgstr ""
 
-#: includes/admin/class-admin.php:161
+#: includes/admin/class-admin.php:163
 msgid "Comments & Pings"
 msgstr ""
 
-#: includes/admin/class-admin.php:176
+#: includes/admin/class-admin.php:178
 msgid "Footer"
 msgstr ""
 
