@@ -93,7 +93,7 @@ class Plugin extends Loader {
 	 * @return void
 	 */
 	private function includes(): void {
-		if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
+		if ( is_admin() && ! wp_doing_ajax() ) {
 			$this->register_integration( Admin::class );
 		} else {
 			$this->register_integration( Frontend::class );
