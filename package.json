@@ -42,7 +42,7 @@
 		"lint-staged": "^15.2.10",
 		"mix-tailwindcss": "^1.3.0",
 		"postcss": "^8.4.49",
-		"prettier": "^3.3.3",
+		"prettier": "^3.4.1",
 		"resolve-url-loader": "^5.0.0",
 		"sass": "^1.81.0",
 		"sass-loader": "^16.0.3",
