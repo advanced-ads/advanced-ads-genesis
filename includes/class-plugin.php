@@ -40,7 +40,7 @@ class Plugin implements Integration_Interface {
 	/**
 	 * Hook into WordPress.
 	 */
-	public function hooks() {
+	public function hooks(): void {
 		$this->init();
 		$this->load_plugin_textdomain();
 	}

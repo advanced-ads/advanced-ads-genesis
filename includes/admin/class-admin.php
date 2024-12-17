@@ -22,7 +22,7 @@ class Admin implements Integration_Interface {
 	/**
 	 * Hook into WordPress.
 	 */
-	public function hooks() {
+	public function hooks(): void {
 		// Add sticky placement.
 		add_action( 'advanced-ads-placement-types', [ $this, 'add_placement' ] );
 

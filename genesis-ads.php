@@ -70,6 +70,11 @@ function advanced_ads_genesis_init() {
 function wp_advads_genesis_halt_code() {
 	global $advads_halt_notices;
 
+	// Early bail!!
+	if ( ! defined( 'ADVADS_VERSION' ) ) {
+		return;
+	}
+
 	if ( version_compare( ADVADS_VERSION, '2.0.0', '>=' ) ) {
 		if ( ! isset( $advads_halt_notices ) ) {
 			$advads_halt_notices = [];
