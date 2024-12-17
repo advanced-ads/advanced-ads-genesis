@@ -48,7 +48,7 @@
 		"sass-loader": "^16.0.3",
 		"shelljs": "^0.8.5",
 		"tailwindcss": "^3.4.15",
-		"webpack": "^5.96.1"
+		"webpack": "^5.97.1"
 	},
 	"browserslist": [
 		"> 1%",
