@@ -2,8 +2,8 @@
 Contributors: advancedads, webzunft
 Tags: genesis, adsense, ads, ad, amazon, adverts, advertisement, banners, rotation, studiopress, genesis framework
 Requires at least: 4.2
-Tested up to: 6.2
-Stable tag: 1.0.8
+Tested up to: 6.7
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,9 @@ You can use Advanced Ads along any other ad management plugins like Ad Inserter 
 2. Choose the position based on hooks which your Genesis theme provides
 
 == Changelog ==
+
+= 1.0.9 =
+- Improvement: add compatibility code for Advanced Ads 2.0
 
 = 1.0.8 =
 

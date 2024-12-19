@@ -3,7 +3,7 @@
  * Plugin Name:       Advanced Ads – Genesis
  * Plugin URI:        https://wpadvancedads.com/add-ons/genesis/
  * Description:       Place ads on various positions within Genesis themes
- * Version:           1.0.8
+ * Version:           1.0.9
  * Author:            Advanced Ads
  * Author URI:        https://wpadvancedads.com
  * Text Domain:       advanced-ads-genesis
@@ -23,7 +23,7 @@ use AdvancedAds\Genesis\Plugin;
 defined( 'ABSPATH' ) || exit;
 
 define( 'AAG_FILE', __FILE__ );
-define( 'AAG_VERSION', '1.0.8' );
+define( 'AAG_VERSION', '1.0.9' );
 define( 'AAG_BASE_PATH', plugin_dir_path( __FILE__ ) );
 define( 'AAG_BASE_URL', plugin_dir_url( __FILE__ ) );
 define( 'AAG_BASE_DIR', dirname( plugin_basename( __FILE__ ) ) );
