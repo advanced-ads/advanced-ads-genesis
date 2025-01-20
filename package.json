@@ -35,7 +35,7 @@
 		"async": "^3.2.6",
 		"browser-sync": "^3.0.3",
 		"browser-sync-webpack-plugin": "^2.3.0",
-		"eslint-plugin-prettier": "^5.2.1",
+		"eslint-plugin-prettier": "^5.2.3",
 		"chalk": "^5.4.1",
 		"husky": "^9.1.7",
 		"laravel-mix": "^6.0.49",
