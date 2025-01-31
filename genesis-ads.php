@@ -39,16 +39,17 @@ define( 'AAG_VERSION', '1.1.0' );
 require_once __DIR__ . '/includes/class-autoloader.php';
 \AdvancedAds\Genesis\Autoloader::get()->initialize();
 
-/**
- * Returns the main instance of the plugin.
- *
- * @since 1.1.0
- *
- * @return \AdvancedAds\Genesis\Plugin
- */
-function wp_advads_genesis() {
-	return \AdvancedAds\Genesis\Plugin::get();
+if ( ! function_exists( 'wp_advads_genesis' ) ) {
+	/**
+	 * Returns the main instance of the plugin.
+	 *
+	 * @since 1.1.0
+	 *
+	 * @return \AdvancedAds\Genesis\Plugin
+	 */
+	function wp_advads_genesis() {
+		return \AdvancedAds\Genesis\Plugin::get();
+	}
 }
 
-// Start it.
-add_action( 'advanced-ads-loaded', 'wp_advads_genesis' );
+\AdvancedAds\Genesis\Bootstrap::get()->start();
