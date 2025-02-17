@@ -45,7 +45,7 @@
 		"prettier": "^3.5.0",
 		"resolve-url-loader": "^5.0.0",
 		"sass": "^1.84.0",
-		"sass-loader": "^16.0.4",
+		"sass-loader": "^16.0.5",
 		"shelljs": "^0.8.5",
 		"tailwindcss": "^4.0.5",
 		"webpack": "^5.97.1"
