@@ -9,6 +9,7 @@
 
 namespace AdvancedAds\Genesis;
 
+use AdvancedAds\Abstracts\Types;
 use AdvancedAds\Framework\Loader;
 
 defined( 'ABSPATH' ) || exit;
@@ -57,7 +58,19 @@ class Plugin extends Loader {
 		$this->includes();
 
 		add_action( 'init', [ $this, 'load_textdomain' ] );
+		add_filter( 'advanced-ads-placement-types-manager', [ $this, 'register_placement_type' ] );
 		$this->load();
+	}
+
+	/**
+	 * Register the genesis placement type
+	 *
+	 * @param Types $manager
+	 *
+	 * @return void
+	 */
+	public function register_placement_type( $manager ) {
+		$manager->register_type( Genesis_Type::class );
 	}
 
 	/**

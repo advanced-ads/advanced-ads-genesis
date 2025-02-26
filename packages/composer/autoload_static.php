@@ -9,7 +9,10 @@ class ComposerStaticInit06a503665edb0f34061882affc4437de
     public static $classMap = array (
         'AdvancedAds\\Genesis\\Admin' => __DIR__ . '/../..' . '/includes/admin/class-admin.php',
         'AdvancedAds\\Genesis\\Autoloader' => __DIR__ . '/../..' . '/includes/class-autoloader.php',
+        'AdvancedAds\\Genesis\\Bootstrap' => __DIR__ . '/../..' . '/includes/class-bootstrap.php',
         'AdvancedAds\\Genesis\\Frontend' => __DIR__ . '/../..' . '/includes/class-frontend.php',
+        'AdvancedAds\\Genesis\\Genesis_Placement' => __DIR__ . '/../..' . '/includes/class-genesis-placement.php',
+        'AdvancedAds\\Genesis\\Genesis_Type' => __DIR__ . '/../..' . '/includes/class-genesis-type.php',
         'AdvancedAds\\Genesis\\Plugin' => __DIR__ . '/../..' . '/includes/class-plugin.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
