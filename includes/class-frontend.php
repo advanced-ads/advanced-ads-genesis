@@ -17,7 +17,6 @@ defined( 'ABSPATH' ) || exit;
  * Frontend Class.
  */
 class Frontend implements Integration_Interface {
-
 	/**
 	 * Hold genesis hooks from placements.
 	 *
@@ -31,25 +30,23 @@ class Frontend implements Integration_Interface {
 	 * @return void
 	 */
 	public function hooks(): void {
-		$hooks = array_keys( $this->get_genesis_hooks() );
-		foreach ( $hooks as $hook ) {
-			add_action( $hook, [ $this, 'execute_hook' ] );
-		}
+		add_action( 'init', [ $this, 'find_genesis_hooks' ], 30 );
 	}
 
 	/**
 	 * Execute genesis hooks
 	 *
-	 * @since 1.0.0
-	 *
 	 * @return void
+	 * @since 1.0.0
 	 */
 	public function execute_hook() {
 		$current_hook = current_filter();
-		$hooks        = $this->get_genesis_hooks();
+		$hooks        = $this->find_genesis_hooks();
 
-		if ( in_array( $current_hook, $hooks, true ) ) {
-			the_ad_placement( $hooks[ $current_hook ] );
+		if ( in_array( $current_hook, array_keys( $hooks ), true ) ) {
+			foreach ( $hooks[ $current_hook ] as $id ) {
+				the_ad_placement( $id );
+			}
 		}
 	}
 
@@ -58,20 +55,31 @@ class Frontend implements Integration_Interface {
 	 *
 	 * @return array
 	 */
-	private function get_genesis_hooks() {
+	public function find_genesis_hooks() {
 		// Early bail!!
 		if ( null !== $this->genesis_hooks ) {
 			return $this->genesis_hooks;
 		}
 
 		$this->genesis_hooks = [];
-		$placements          = get_option( 'advads-ads-placements', [] );
+		$placements          = wp_advads_get_placements_by_types( 'genesis' );
 
-		foreach ( $placements as $placement_id => $placement ) {
-			if ( isset( $placement['type'] ) && 'genesis' === $placement['type'] && isset( $placement['options']['genesis_hook'] ) ) {
-				$hook = 'genesis_' . $placement['options']['genesis_hook'];
+		foreach ( $placements as $id => $placement ) {
+			$hook = $placement->get_prop( 'genesis_hook' );
+			if ( ! $hook ) {
+				continue;
+			}
 
-				$this->genesis_hooks[ $hook ] = $placement_id;
+			$hook = "genesis_$hook";
+
+			if ( ! isset( $this->genesis_hooks[ $hook ] ) ) {
+				$this->genesis_hooks[ $hook ] = [];
+			}
+
+			$this->genesis_hooks[ $hook ] [] = $id;
+
+			if ( 2 > count( $this->genesis_hooks[ $hook ] ) ) {
+				add_action( $hook, [ $this, 'execute_hook' ] );
 			}
 		}
 

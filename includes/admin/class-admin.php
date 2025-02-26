@@ -9,7 +9,7 @@
 
 namespace AdvancedAds\Genesis;
 
-use AdvancedAds\Utilities\WordPress;
+use AdvancedAds\Abstracts\Placement;
 use AdvancedAds\Framework\Interfaces\Integration_Interface;
 
 defined( 'ABSPATH' ) || exit;
@@ -25,43 +25,17 @@ class Admin implements Integration_Interface {
 	 * @return void
 	 */
 	public function hooks(): void {
-		// Add sticky placement.
-		add_action( 'advanced-ads-placement-types', [ $this, 'add_placement' ] );
-
-		// Content of sticky placement.
 		add_action( 'advanced-ads-placement-options-after', [ $this, 'placement_options' ], 10, 2 );
-	}
-
-	/**
-	 * Add placement
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param array $types Hold placements.
-	 *
-	 * @return array $types
-	 */
-	public function add_placement( $types ) {
-		$types['genesis'] = [
-			'title'       => esc_html__( 'Genesis Positions', 'advanced-ads-genesis' ),
-			'description' => esc_html__( 'Various positions for the Genesis theme.', 'advanced-ads-genesis' ),
-			'image'       => AA_GENESIS_BASE_URL . 'assets/img/genesis.png',
-			'order'       => 81,
-			'is_premium'  => false,
-		];
-
-		return $types;
 	}
 
 	/**
 	 * Options for the placement.
 	 *
-	 * @since 1.0.0
-	 *
 	 * @param string    $placement_slug Placement id.
 	 * @param Placement $placement      Placement instance.
 	 *
 	 * @return void
+	 * @since 1.0.0
 	 */
 	public function placement_options( $placement_slug = '', $placement = [] ) {
 		// Early bail!!
@@ -71,64 +45,33 @@ class Admin implements Integration_Interface {
 
 		$genesis_positions = $this->get_genesis_hooks();
 		$current           = $placement->get_prop( 'genesis_hook' ) ?? '';
-
-		// Warning if no Genesis theme installed.
-		if ( ! defined( 'PARENT_THEME_NAME' ) || 'Genesis' !== PARENT_THEME_NAME ) :
-			?>
-		<p class="advads-error-message">
-			<?php echo esc_html__( 'No Genesis theme detected', 'advanced-ads-genesis' ); ?>
-		</p>
-			<?php
-		endif;
-
-		ob_start();
-		?>
-		<select name="advads[placements][options][genesis_hook]">
-			<option disabled selected><?php esc_attr_e( 'Select Position', 'advanced-ads-genesis' ); ?></option>
-			<?php foreach ( $genesis_positions as $_group => $_positions ) : ?>
-				<optgroup label="<?php echo esc_attr( $_group ); ?>">
-					<?php foreach ( $_positions as $_position ) : ?>
-						<option <?php selected( $_position, $current ); ?>><?php echo esc_html( $_position ); ?></option>
-					<?php endforeach; ?>
-				</optgroup>
-			<?php endforeach; ?>
-		</select>
-		<?php
-		$option_content = ob_get_clean();
-
-		WordPress::render_option(
-			'placement-genesis-hook',
-			__( 'Position', 'advanced-ads-genesis' ),
-			$option_content,
-			/* translators: URL to Genesis Hook Reference */
-			sprintf( __( 'You can find an explanation of the hooks in the <a href="%s" target="_blank">Genesis Hook Reference</a>', 'advanced-ads-genesis' ), 'https://my.studiopress.com/docs/hook-reference/' )
-		);
+		include AA_GENESIS_ABSPATH . 'views/admin/positions.php';
 	}
 
 	/**
 	 * Get list of genesis hooks.
 	 *
-	 * @since 1.0.0
+	 * @return array $positions
 	 * @link  https://my.studiopress.com/docs/hook-reference/#structural-action-hooks
 	 *
-	 * @return array $positions
+	 * @since 1.0.0
 	 */
-	public function get_genesis_hooks() {
+	private function get_genesis_hooks() {
 		return [
-			esc_html__( 'Header', 'advanced-ads-genesis' ) => [
+			esc_html__( 'Header', 'advanced-ads-genesis' )           => [
 				'before_header',
 				'header',
 				'after_header',
 				'site_title',
 				'site_description',
 			],
-			esc_html__( 'Wrapper', 'advanced-ads-genesis' ) => [
+			esc_html__( 'Wrapper', 'advanced-ads-genesis' )          => [
 				'before_content_sidebar_wrap',
 				'after_content_sidebar_wrap',
 				'before_content',
 				'after_content',
 			],
-			esc_html__( 'Sidebar', 'advanced-ads-genesis' ) => [
+			esc_html__( 'Sidebar', 'advanced-ads-genesis' )          => [
 				'sidebar',
 				'before_sidebar_widget_area',
 				'after_sidebar_widget_area',
@@ -136,14 +79,14 @@ class Admin implements Integration_Interface {
 				'before_sidebar_alt_widget_area',
 				'after_sidebar_alt_widget_area',
 			],
-			esc_html__( 'Loop', 'advanced-ads-genesis' )   => [
+			esc_html__( 'Loop', 'advanced-ads-genesis' )             => [
 				'before_loop',
 				'loop',
 				'after_loop',
 				'after_endwhile',
 				'loop_else',
 			],
-			esc_html__( 'Content', 'advanced-ads-genesis' ) => [
+			esc_html__( 'Content', 'advanced-ads-genesis' )          => [
 				'before_entry',
 				'after_entry',
 				'entry_header',
@@ -175,7 +118,7 @@ class Admin implements Integration_Interface {
 				'comment_form',
 				'after_comment_form',
 			],
-			esc_html__( 'Footer', 'advanced-ads-genesis' ) => [
+			esc_html__( 'Footer', 'advanced-ads-genesis' )           => [
 				'before_footer',
 				'footer',
 				'after_footer',
