@@ -3,22 +3,27 @@
  * Advanced Ads – Genesis
  *
  * @package   AdvancedAds
- * @author    Advanced Ads GmbH <support@wpadvancedads.com>
+ * @author    Advanced Ads <support@wpadvancedads.com>
  * @license   GPL-2.0+
  * @link      https://wpadvancedads.com
- * @copyright since 2013 Advanced Ads GmbH
+ * @copyright since 2013 Advanced Ads
  *
  * @wordpress-plugin
  * Plugin Name:       Advanced Ads – Genesis
- * Plugin URI:        https://wpadvancedads.com/add-ons/genesis/
- * Description:       Place ads on various positions within Genesis themes
  * Version:           1.1.0
- * Author:            Advanced Ads GmbH
+ * Description:       Place ads on various positions within Genesis themes
+ * Plugin URI:        https://wpadvancedads.com/add-ons/genesis/
+ * Author:            Advanced Ads
  * Author URI:        https://wpadvancedads.com
  * Text Domain:       advanced-ads-genesis
  * Domain Path:       /languages
  * License:           GPL-2.0+
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ * @requires
+ * Requires at least: 5.7
+ * Requires PHP:      7.4
+ * Requires Plugins:  advanced-ads
  */
 
 // Early bail!!
