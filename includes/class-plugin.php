@@ -65,7 +65,7 @@ class Plugin extends Loader {
 	/**
 	 * Register the genesis placement type
 	 *
-	 * @param Types $manager
+	 * @param Types $manager Placement types manager.
 	 *
 	 * @return void
 	 */
@@ -119,8 +119,7 @@ class Plugin extends Loader {
 	 * @return void
 	 */
 	public function load_textdomain(): void {
-		$locale = determine_locale();
-		$locale = apply_filters( 'plugin_locale', $locale, 'advanced-ads-genesis' );
+		$locale = apply_filters( 'plugin_locale', determine_locale(), 'advanced-ads-genesis' );
 
 		unload_textdomain( 'advanced-ads-genesis' );
 		if ( false === load_textdomain( 'advanced-ads-genesis', WP_LANG_DIR . '/plugins/advanced-ads-genesis-' . $locale . '.mo' ) ) {
