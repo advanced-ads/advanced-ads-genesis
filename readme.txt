@@ -68,7 +68,7 @@ You can use Advanced Ads along any other ad management plugins like Ad Inserter 
 
 = 1.0.8 =
 
-* Fix: update plugin description
+- Fix: update plugin description
 
 = 1.0.7 =
 
@@ -78,28 +78,3 @@ You can use Advanced Ads along any other ad management plugins like Ad Inserter 
 = 1.0.6 =
 
 - added compatibility with the new placement order in Advanced Ads
-
-= 1.0.5 =
-
-* updated link
-
-= 1.0.4 =
-
-* fixed more text domains
-
-= 1.0.3 =
-
-* fixed text domain
-* updated translation files
-
-= 1.0.2 =
-
-* added Spanish translation
-
-= 1.0.1 =
-
-* fixed broken hooks
-
-= 1.0.0 =
-
-* first plugin version

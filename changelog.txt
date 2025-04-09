@@ -1,1 +1,43 @@
 == Changelog ==
+
+= 2.0.0 =
+- Feature: achieve full compatibility with Advanced Ads 2.0
+- Improvement: enhance performance and efficiency with new codebase
+
+= 1.0.8 =
+
+- Fix: update plugin description
+
+= 1.0.7 =
+
+- updated placement UI according to the current Advanced Ads layout
+- updated backend links to use HTTPS
+
+= 1.0.6 =
+
+- added compatibility with the new placement order in Advanced Ads
+
+= 1.0.5 =
+
+- updated link
+
+= 1.0.4 =
+
+- fixed more text domains
+
+= 1.0.3 =
+
+- fixed text domain
+- updated translation files
+
+= 1.0.2 =
+
+- added Spanish translation
+
+= 1.0.1 =
+
+- fixed broken hooks
+
+= 1.0.0 =
+
+- first plugin version
