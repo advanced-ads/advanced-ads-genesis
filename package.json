@@ -39,7 +39,7 @@
 		"eslint-plugin-prettier": "^5.4.0",
 		"husky": "^9.1.7",
 		"laravel-mix": "^6.0.49",
-		"lint-staged": "^16.0.0",
+		"lint-staged": "^16.1.0",
 		"mix-tailwindcss": "^1.3.0",
 		"postcss": "^8.5.3",
 		"prettier": "^3.5.3",
