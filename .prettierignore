@@ -37,8 +37,9 @@ composer.lock
 # Config files
 .*
 *-lock*
-webpack.mix.js
-tailwind.config.js
+package.json
+webpack.config.js
+postcss.config.js
 
 # Support .gitkeep Files
 !.gitkeep
