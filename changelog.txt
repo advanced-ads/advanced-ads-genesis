@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 2.0.1 (June 23, 2025) =
+
+- Improvement: add undefined translations
+
 = 2.0.0 =
 - Feature: achieve full compatibility with Advanced Ads 2.0
 - Improvement: enhance performance and efficiency with new codebase

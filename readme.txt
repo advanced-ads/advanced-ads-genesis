@@ -4,7 +4,7 @@ Tags: genesis, adsense, ads, ad, amazon, adverts, advertisement, banners, rotati
 Requires at least: 5.7
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,10 @@ You can use Advanced Ads along any other ad management plugins like Ad Inserter 
 2. Choose the position based on hooks which your Genesis theme provides
 
 == Changelog ==
+
+= 2.0.1 (June 23, 2025) =
+
+- Improvement: add undefined translations
 
 = 2.0.0 =
 - Feature: achieve full compatibility with Advanced Ads 2.0
