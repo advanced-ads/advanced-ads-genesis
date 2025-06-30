@@ -1,0 +1,79 @@
+name: Notify Slack on Release
+
+on:
+  release:
+    types: [published, edited]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Slack notification with release notes
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.RELEASE_WEBHOOK }}
+        run: |
+          RELEASE_TAG="${{ github.event.release.tag_name }}"
+          RELEASE_URL="${{ github.event.release.html_url }}"
+          RELEASE_BODY="${{ github.event.release.body }}"
+          REPO_NAME_RAW="${{ github.repository }}"
+          ORG=$(echo "$REPO_NAME_RAW" | cut -d/ -f1)
+          REPO=$(echo "$REPO_NAME_RAW" | cut -d/ -f2)
+
+          title_case() {
+            echo "$1" | sed -E 's/(^|-)([a-z])/\U\2/g' | tr '-' ' '
+          }
+
+          ORG_PRETTY=$(title_case "$ORG")
+          REPO_PRETTY=$(title_case "$REPO")
+
+          if [[ "$REPO_PRETTY" == "$ORG_PRETTY"* ]]; then
+            REPO_PRETTY=${REPO_PRETTY#"$ORG_PRETTY"}
+            REPO_PRETTY=$(echo "$REPO_PRETTY" | sed 's/^ *//')
+          fi
+
+          REPO_NAME="$ORG_PRETTY"
+          if [[ -n "$REPO_PRETTY" ]]; then
+            REPO_NAME+=" $REPO_PRETTY"
+          fi
+
+          # Convert GitHub markdown links [text](url) to Slack <url|text>
+          FILTERED_BODY=$(echo "$RELEASE_BODY" | sed '/^\*\*Full Changelog\*\*:/,$!d' | sed '1d')
+          CLEAN_BODY=$(echo "$FILTERED_BODY" | \
+            sed -E 's/^## (.*)/*\1*/' | \
+            sed -E 's/\[([^\]]+)\]\(([^)]+)\)/<\2|\1>/g'
+          )
+          # Convert each line to a bullet list item with proper Slack markdown
+          SLACK_LIST=$(echo "$CLEAN_BODY" | sed -E 's/^[-*] /• /')
+
+          # Build JSON payload using jq for safe escaping
+          PAYLOAD=$(jq -n \
+            --arg username "Release Bot" \
+            --arg icon_emoji ":advancedads:" \
+            --arg title "<${RELEASE_URL}|${REPO_NAME} ${RELEASE_TAG}>" \
+            --arg release_notes "$SLACK_LIST" \
+            '{
+              username: $username,
+              icon_emoji: $icon_emoji,
+              blocks: [
+                {
+                  type: "section",
+                  text: {
+                    type: "mrkdwn",
+                    text: $title
+                  }
+                },
+                {
+                  type: "section",
+                  text: {
+                    type: "mrkdwn",
+                    text: $release_notes
+                  }
+                }
+              ]
+            }'
+          )
+
+          curl -X POST -H 'Content-type: application/json' \
+            --data "$PAYLOAD" \
+            "$SLACK_WEBHOOK_URL"
