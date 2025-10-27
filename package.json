@@ -35,7 +35,7 @@
 		"@wordpress/scripts": "^30.26.0",
 		"async": "^3.2.6",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.2.4"
+		"lint-staged": "^16.2.6"
 	},
 	"lint-staged": {
 		"*.js": [
