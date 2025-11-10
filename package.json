@@ -31,7 +31,7 @@
 		"prepare": "husky"
 	},
 	"devDependencies": {
-		"@tailwindcss/postcss": "^4.1.16",
+		"@tailwindcss/postcss": "^4.1.17",
 		"@wordpress/scripts": "^30.27.0",
 		"async": "^3.2.6",
 		"husky": "^9.1.7",
