@@ -2,12 +2,6 @@
 <ruleset name="Advanced Ads">
 	<description>Advanced Ads Coding Standards.</description>
 
-	<!-- PHPCS arguments: -->
-	<arg value="ps" />
-	<arg name="colors"/>
-	<arg name="parallel" value="20" />
-	<arg name="extensions" value="php"/>
-
 	<!-- Set files and paths: -->
 	<file>.</file>
 
@@ -19,6 +13,13 @@
 	<exclude-pattern>*/tests/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*/index.php</exclude-pattern>
+
+	<!-- PHPCS arguments: -->
+	<arg value="ps" />
+	<arg name="basepath" value="./"/><!-- Strip the file paths down to the relevant bit -->
+	<arg name="colors"/>
+	<arg name="parallel" value="20" />
+	<arg name="extensions" value="php"/>
 
 	<!-- PHPCompatibility configs: -->
 	<config name="testVersion" value="7.2-" />
@@ -83,5 +84,11 @@
         <type>error</type>
         <message>Method name "%s" must not be prefixed with an underscore to indicate visibility</message>
     </rule>
+
+	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
+		<properties>
+			<property name="blank_line_check" value="true"/>
+		</properties>
+	</rule>
 
 </ruleset>

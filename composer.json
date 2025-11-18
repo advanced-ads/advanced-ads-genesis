@@ -15,17 +15,18 @@
 		}
 	],
 	"require": {
-		"php": ">=7.2"
+		"php": ">=7.4"
 	},
 	"require-dev": {
 		"phpcompatibility/phpcompatibility-wp": "*",
+		"phpunit/phpunit": "^9",
 		"wp-coding-standards/wpcs": "^3.0.0"
 	},
 	"config": {
 		"optimize-autoloader": true,
 		"sort-packages": true,
 		"platform": {
-			"php": "7.2"
+			"php": "7.4"
 		},
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true
@@ -40,7 +41,6 @@
 		"post-install-cmd": [
 			"composer global require wp-cli/wp-cli",
 			"composer global require wp-cli/i18n-command"
-		],
-		"build": "sh ./tools/build.sh"
+		]
 	}
 }

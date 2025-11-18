@@ -41,3 +41,4 @@ mix-manifest.json
 # WP Browser Files
 tests/_output
 tests/.env
+.phpunit.result.cache
