@@ -1,8 +1,8 @@
 === Ads for Genesis ===
-Contributors: advancedads, webzunft
+Contributors: advancedads
 Tags: genesis, adsense, ads, ad, amazon, adverts, advertisement, banners, rotation, studiopress, genesis framework
 Requires at least: 5.7
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 2.0.1
 License: GPLv2 or later
