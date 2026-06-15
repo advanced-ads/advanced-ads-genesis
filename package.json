@@ -32,7 +32,7 @@
 		"test:playwright:debug": "wp-scripts test-playwright --debug"
 	},
 	"devDependencies": {
-		"@tailwindcss/postcss": "^4.3.0",
+		"@tailwindcss/postcss": "^4.3.1",
 		"@wordpress/scripts": "^32.4.0",
 		"async": "^3.2.6",
 		"husky": "^9.1.7",
