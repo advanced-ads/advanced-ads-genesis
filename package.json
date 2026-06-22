@@ -33,7 +33,7 @@
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4.3.1",
-		"@wordpress/scripts": "^32.4.0",
+		"@wordpress/scripts": "^32.4.1",
 		"async": "^3.2.6",
 		"husky": "^9.1.7",
 		"lint-staged": "^17.0.7"
