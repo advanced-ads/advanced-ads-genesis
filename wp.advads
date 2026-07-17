@@ -3,7 +3,7 @@
     "name": "Advanced Ads – Genesis",
     "description": "Place ads on various positions within Genesis themes",
     "version": "2.0.1",
-    "requireWP": "7.0",
+    "requireWP": "5.7",
     "requirePHP": "7.4",
     "textDomain": "advanced-ads-genesis",
     "glotpress": "advanced-ads-genesis"
