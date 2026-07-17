@@ -1,7 +1,7 @@
 === Ads for Genesis ===
 Contributors: advancedads
 Tags: genesis, adsense, ads, ad, amazon, adverts, advertisement, banners, rotation, studiopress, genesis framework
-Requires at least: 7.0
+Requires at least: 5.7
 Tested up to: 7.0
 Requires PHP: 7.4
 Stable tag: 2.0.1
