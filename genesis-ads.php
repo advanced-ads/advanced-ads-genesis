@@ -15,7 +15,6 @@
  * Plugin URI:        https://wpadvancedads.com/add-ons/genesis/
  * Author:            Advanced Ads
  * Author URI:        https://wpadvancedads.com
- * Update URI:        https://wpadvancedads.com/
  * Text Domain:       advanced-ads-genesis
  * Domain Path:       /languages
  * License:           GPL-2.0+
