@@ -10,7 +10,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Advanced Ads – Genesis
- * Version:           2.0.1
+ * Version:           2.0.2
  * Description:       Place ads on various positions within Genesis themes
  * Plugin URI:        https://wpadvancedads.com/add-ons/genesis/
  * Author:            Advanced Ads
@@ -37,7 +37,7 @@ if ( defined( 'AAG_FILE' ) ) {
 }
 
 define( 'AAG_FILE', __FILE__ );
-define( 'AAG_VERSION', '2.0.1' );
+define( 'AAG_VERSION', '2.0.2' );
 
 // Load the autoloader.
 require_once __DIR__ . '/includes/class-autoloader.php';
