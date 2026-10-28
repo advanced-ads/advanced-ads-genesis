@@ -9,7 +9,7 @@
  * @var string $current           selected hook
  */
 
-use AdvancedAds\Utilities\WordPress;
+use AdvancedAds\Admin\UI;
 
 ?>
 <?php if ( ! defined( 'PARENT_THEME_NAME' ) || 'Genesis' !== PARENT_THEME_NAME ) : ?>
@@ -33,7 +33,7 @@ use AdvancedAds\Utilities\WordPress;
 <?php
 $option_content = ob_get_clean();
 
-WordPress::render_option(
+UI::render_option(
 	'placement-genesis-hook',
 	__( 'Position', 'advanced-ads-genesis' ),
 	$option_content,
